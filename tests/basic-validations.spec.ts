@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/playwright-locators-practice.html');
 })
 
-test('Validate Product 2 checkbox is disabled', async ({ page }) => {
+test.only('Validate Product 2 checkbox is disabled', async ({ page }) => {
 
     const chkProd2 = page.getByRole('listitem')
         .filter({ hasText: 'Product 2' })
