@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test'
 
 test('Click Add to cart for Product 2', async({page}) => {
 
-    await page.goto('demo-html/playwright-locators-practice.html');
+    await page.goto('http://localhost:3000/playwright-locators-practice.html');
     await page.waitForTimeout(3000);
     await page.getByRole('listitem')
         .filter({has: page.getByRole('heading', {name: 'Product 2'})})
@@ -12,7 +12,7 @@ test('Click Add to cart for Product 2', async({page}) => {
 
 test('Click Add to cart for Product 3 using regex', async({page}) => {
 
-    await page.goto('demo-html/playwright-locators-practice.html');
+    await page.goto('http://localhost:3000/playwright-locators-practice.html');
     await page.waitForTimeout(3000);
     await page.getByRole('listitem')
         .filter({hasText: /Product 3/})
@@ -22,7 +22,7 @@ test('Click Add to cart for Product 3 using regex', async({page}) => {
 
 test('Count products having “In Stock', async({page}) => {
 
-    await page.goto('demo-html/playwright-locators-practice.html');
+    await page.goto('http://localhost:3000/playwright-locators-practice.html');
     await page.waitForTimeout(3000);
 /*     const statusLocator = page.locator("#products > li > p");
     console.log('No. of status paragraph elements: ' + await statusLocator.count());

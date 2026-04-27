@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('demo-html/playwright-locators-practice.html');
+    await page.goto('http://localhost:3000/playwright-locators-practice.html');
 })
 
 test('Validate Product 2 checkbox is disabled', async ({ page }) => {
