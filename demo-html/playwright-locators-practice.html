@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Playwright Locator Practice</title>
+
+  <style>
+    .added {
+      background-color: green;
+      color: white;
+    }
+  </style>
+
+  <script>
+  function addToCart(button) {
+    const product = button.closest('li');
+    const statusText = product.querySelector('p').textContent;
+
+    if (statusText.includes('Out of Stock')) {
+      button.style.backgroundColor = 'red';
+      button.style.color = 'white';
+      button.textContent = "Out of Stock";
+    } else {
+      button.style.backgroundColor = 'green';
+      button.style.color = 'white';
+      button.textContent = "Added";
+    }
+  }
+</script>
+</head>
+<body>
+
+  <h1>Product Store</h1>
+
+  <!-- Product List -->
+  <ul id="products">
+  <li>
+    <input type="checkbox" />
+    <h3>Product 1</h3>
+    <p>Status: In Stock</p>
+    <button data-testid="add-btn" onclick="addToCart(this)">Add to cart</button>
+  </li>
+
+  <li>
+    <input type="checkbox" disabled />
+    <h3>Product 2</h3>
+    <p>Status: Out of Stock</p>
+    <button data-testid="add-btn" onclick="addToCart(this)">Add to cart</button>
+  </li>
+
+  <li>
+    <input type="checkbox" />
+    <h3>Product 3</h3>
+    <p>Status: In Stock</p>
+    <button data-testid="add-btn" onclick="addToCart(this)">Add to cart</button>
+  </li>
+</ul>
+
+  <!-- Login Form -->
+  <h2>Login</h2>
+  <label>Username <input type="text" placeholder="Enter username" /></label>
+  <label>Password <input type="password" placeholder="Enter password" /></label>
+  <button>Login</button>
+
+  <!-- Dialog -->
+  <div data-testid="settings-dialog" style="display:block;">
+    <h2>Settings</h2>
+    <button>Save</button>
+    <button>Cancel</button>
+  </div>
+
+  <!-- Visibility Section -->
+  <div>
+    <button style="display:none">Hidden Button</button>
+    <button>Visible Button</button>
+  </div>
+
+</body>
+</html>
